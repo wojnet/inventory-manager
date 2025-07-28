@@ -9,7 +9,7 @@ public class ItemChangelog : BaseEntity
 
     public bool ItemAdded { get; private set; }
     public string ChangeDescription { get; private set; }
-    public string PropertyName { get; private set; }
+    public ItemProperty ChangedProperty { get; private set; }
     public ItemPropertyValueType PropertyType { get; private set; }
     public string OldValue { get; private set; }
     public string NewValue { get; private set; }
@@ -19,7 +19,8 @@ public class ItemChangelog : BaseEntity
         Guid itemId,
         bool itemAdded,
         string changeDescription,
-        string propertyName,
+        ItemProperty changedProperty,
+        ItemPropertyValueType propertyType,
         string oldValue,
         string newValue
     )
@@ -27,7 +28,8 @@ public class ItemChangelog : BaseEntity
         ItemId = itemId;
         ItemAdded = itemAdded;
         ChangeDescription = changeDescription;
-        PropertyName = propertyName;
+        ChangedProperty = changedProperty;
+        PropertyType = propertyType;
         OldValue = oldValue;
         NewValue = newValue;
     }
